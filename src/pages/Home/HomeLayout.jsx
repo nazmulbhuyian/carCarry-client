@@ -5,7 +5,7 @@ import Banner from "./Banner/Banner";
 
 const HomeLayout = () => {
     return (
-        <div className="mt-5">
+        <div className="mt-5 mb-10">
             <Banner></Banner>
             <AboutCar></AboutCar>
             <AboutClient></AboutClient>
