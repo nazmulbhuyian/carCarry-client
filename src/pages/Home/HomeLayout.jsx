@@ -1,6 +1,8 @@
+
 import AboutCar from "./AboutCar/AboutCar";
 import AboutClient from "./AboutClient/AboutClient";
 import Banner from "./Banner/Banner";
+import RidesEvery from "./RidesEvery/RidesEvery";
 
 
 const HomeLayout = () => {
@@ -9,6 +11,7 @@ const HomeLayout = () => {
             <Banner></Banner>
             <AboutCar></AboutCar>
             <AboutClient></AboutClient>
+            <RidesEvery></RidesEvery>
         </div>
     );
 };

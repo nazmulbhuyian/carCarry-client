@@ -1,0 +1,302 @@
+[
+    {
+        "heading":{
+            "c-img": "https://i.ibb.co/PG8zy9Q/car-10.jpg",
+            "c-name": "Mercedes-Benz",
+            "c-prize": 35,
+            "c-heading": "I keep the car very tidy and always great",
+            "u-img": "https://i.ibb.co/1qwSYvz/274177129-666579191161067-2519858385740403490-n.jpg",
+            "u-name": "Nazmul Bhuyian",
+            "u-ratting": 5,
+            "u-phone": "01300048487",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!"
+        },
+        "characteristics":{
+            "model": "Mercedes-Benz-Corvette",
+            "year": 2018,
+            "fuel": "Diesel",
+            "km": "140.00-180.00",
+            "reg-number": "125gdx",
+            "seat": 4,
+            "insurance": "Yes"
+        },
+        "features": {
+            "abs": "abs",
+            "cruise": "Cruise control",
+            "remote": "Audio remote control",
+            "alarm": "Alarm",
+            "electric-door": "Electric door mirrors",
+            "bluetooth": "Bluetooth connection"
+        }
+    },
+    {
+        "heading":{
+            "c-img": "https://i.ibb.co/wd6bqbV/car-9.jpg",
+            "c-name": "Ford",
+            "c-prize": 32,
+            "c-heading": "Ideal for weekend trips.",
+            "u-img": "https://i.ibb.co/b3C5Knv/second.jpg",
+            "u-name": "Alberti, Leone Battista",
+            "u-ratting": 3.5,
+            "u-phone": "01864655",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!"
+        },
+        "characteristics":{
+            "model": "Ford Mustang",
+            "year": 2017,
+            "fuel": "CNG",
+            "km": "125.00-160.00",
+            "reg-number": "525vds",
+            "seat": 3,
+            "insurance": "No"
+        },
+        "features": {
+            "abs": "abs",
+            "cruise": "Cruise control",
+            "remote": "Audio remote control",
+            "alarm": "Alarm",
+            "electric-door": "Electric door mirrors",
+            "bluetooth": "Bluetooth connection"
+        }
+    },
+    {
+        "heading":{
+            "c-img": "https://i.ibb.co/G2rsBN9/car-8.jpg",
+            "c-name": "Volkswagen",
+            "c-prize": 40,
+            "c-heading": "I keep the car very tidy and always great",
+            "u-img": "https://i.ibb.co/0sFD0KF/download.jpg",
+            "u-name": "Alcott, Louisa May",
+            "u-ratting": 4.5,
+            "u-phone": "0186423",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!"
+        },
+        "characteristics":{
+            "model": "Volkswagen Beetle",
+            "year": 2016,
+            "fuel": "Okten",
+            "km": "145.00-185.00",
+            "reg-number": "125grf",
+            "seat": 3,
+            "insurance": "Yes"
+        },
+        "features": {
+            "abs": "abs",
+            "cruise": "Cruise control",
+            "remote": "Audio remote control",
+            "alarm": "Alarm",
+            "electric-door": "Electric door mirrors",
+            "bluetooth": "Bluetooth connection"
+        }
+    },
+    {
+        "heading":{
+            "c-img": "https://i.ibb.co/WHdcXQR/car-7.jpg",
+            "c-name": "BMW",
+            "c-prize": 25,
+            "c-heading": "Ideal car for going to work or just driving",
+            "u-img": "https://i.ibb.co/M10CBmH/download-1.jpg",
+            "u-name": "Alexie, Sherman",
+            "u-ratting": 3,
+            "u-phone": "0159346",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!"
+        },
+        "characteristics":{
+            "model": "BMW-Mini",
+            "year": 2020,
+            "fuel": "Diesel",
+            "km": "180.00-210.00",
+            "reg-number": "268fgi",
+            "seat": 2,
+            "insurance": "Yes"
+        },
+        "features": {
+            "abs": "abs",
+            "cruise": "Cruise control",
+            "remote": "Audio remote control",
+            "alarm": "Alarm",
+            "electric-door": "Electric door mirrors",
+            "bluetooth": "Bluetooth connection"
+        }
+    },
+    {
+        "heading":{
+            "c-img": "https://i.ibb.co/Fw5dFjb/car-6.jpg",
+            "c-name": "Audi",
+            "c-prize": 30,
+            "c-heading": "Ideal for weekend trips.",
+            "u-img": "https://i.ibb.co/Ptp0c02/images-4.jpg",
+            "u-name": "Arbuthnot, John",
+            "u-ratting": 4,
+            "u-phone": "0186251",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!"
+        },
+        "characteristics":{
+            "model": "Audi-Camry",
+            "year": 2021,
+            "fuel": "CNG",
+            "km": "120.00-140.00",
+            "reg-number": "268dft",
+            "seat": 4,
+            "insurance": "NO"
+        },
+        "features": {
+            "abs": "abs",
+            "cruise": "Cruise control",
+            "remote": "Audio remote control",
+            "alarm": "Alarm",
+            "electric-door": "Electric door mirrors",
+            "bluetooth": "Bluetooth connection"
+        }
+    },
+    {
+        "heading":{
+            "c-img": "https://i.ibb.co/tPZ1tPd/car-5.jpg",
+            "c-name": "Renault",
+            "c-prize": 20,
+            "c-heading": "Ideal car for going to work or just driving",
+            "u-img": "https://i.ibb.co/zQQSgky/images-3.jpg",
+            "u-name": "Anthony, Susan B.",
+            "u-ratting": 3.5,
+            "u-phone": "01535555",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!"
+        },
+        "characteristics":{
+            "model": "Renault-Dodge",
+            "year": 2018,
+            "fuel": "Okten",
+            "km": "130.00-150.00",
+            "reg-number": "125gds",
+            "seat": 4,
+            "insurance": "Yes"
+        },
+        "features": {
+            "abs": "abs",
+            "cruise": "Cruise control",
+            "remote": "Audio remote control",
+            "alarm": "Alarm",
+            "electric-door": "Electric door mirrors",
+            "bluetooth": "Bluetooth connection"
+        }
+    },
+    {
+        "heading":{
+            "c-img": "https://i.ibb.co/jHWH8Ly/car-4.jpg",
+            "c-name": "TOYOTA",
+            "c-prize": 28,
+            "c-heading": "Motivated Driver focused on efficiently and safely navigating routes to guarantee incident-free, on-time deliveries",
+            "u-img": "https://i.ibb.co/bFZHvPK/images-2.jpg",
+            "u-name": "Anderson, Beth",
+            "u-ratting": 4.5,
+            "u-phone": "015326656",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!"
+        },
+        "characteristics":{
+            "model": "TOYOTA-Premia",
+            "year": 2022,
+            "fuel": "Diesel",
+            "km": "130.00-150.00",
+            "reg-number": "268dgy",
+            "seat": 3,
+            "insurance": "Yes"
+        },
+        "features": {
+            "abs": "abs",
+            "cruise": "Cruise control",
+            "remote": "Audio remote control",
+            "alarm": "Alarm",
+            "electric-door": "Electric door mirrors",
+            "bluetooth": "Bluetooth connection"
+        }
+    },
+    {
+        "heading":{
+            "c-img": "https://i.ibb.co/RNkhJq5/car-3.jpg",
+            "c-name": "Hyundai",
+            "c-prize": 35,
+            "c-heading": "focus on work accomplishments instead of mundane daily tasks",
+            "u-img": "https://i.ibb.co/MGsd3CK/images-1.jpg",
+            "u-name": "Allston, Aaron",
+            "u-ratting": 5,
+            "u-phone": "01563862",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!"
+        },
+        "characteristics":{
+            "model": "Hyundai-Viper",
+            "year": 2020,
+            "fuel": "Okten",
+            "km": "120.00-140.00",
+            "reg-number": "248ghl",
+            "seat": 3,
+            "insurance": "NO"
+        },
+        "features": {
+            "abs": "abs",
+            "cruise": "Cruise control",
+            "remote": "Audio remote control",
+            "alarm": "Alarm",
+            "electric-door": "Electric door mirrors",
+            "bluetooth": "Bluetooth connection"
+        }
+    },
+    {
+        "heading":{
+            "c-img": "https://i.ibb.co/pnr69xL/car-2.jpg",
+            "c-name": "Alfa Romeo",
+            "c-prize": 40,
+            "c-heading": "Adept in safe driving practices and traffic laws",
+            "u-img": "https://i.ibb.co/W2Lcjxp/images.jpg",
+            "u-name": "Ali, Muhammad",
+            "u-ratting": 3.5,
+            "u-phone": "0186556655",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!"
+        },
+        "characteristics":{
+            "model": "Alfa Romeo",
+            "year": 2022,
+            "fuel": "CNG",
+            "km": "145.00-185.00",
+            "reg-number": "158dvn",
+            "seat": 4,
+            "insurance": "Yes"
+        },
+        "features": {
+            "abs": "abs",
+            "cruise": "Cruise control",
+            "remote": "Audio remote control",
+            "alarm": "Alarm",
+            "electric-door": "Electric door mirrors",
+            "bluetooth": "Bluetooth connection"
+        }
+    },
+    {
+        "heading":{
+            "c-img": "https://i.ibb.co/W0g8fzX/car-1.jpg",
+            "c-name": "Nissan",
+            "c-prize": 25,
+            "c-heading": "providing excellent safety procedures, daily vehicle inspections and expert recommendations for efficient vehicle routing",
+            "u-img": "https://i.ibb.co/DKPTSnd/download-2.jpg",
+            "u-name": "Ali ibn Abi Talib",
+            "u-ratting": 4.5,
+            "u-phone": "01865335",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!"
+        },
+        "characteristics":{
+            "model": "Nissan-Auto",
+            "year": 2021,
+            "fuel": "Diesel",
+            "km": "125.00-160.00",
+            "reg-number": "236pud",
+            "seat": 3,
+            "insurance": "Yes"
+        },
+        "features": {
+            "abs": "abs",
+            "cruise": "Cruise control",
+            "remote": "Audio remote control",
+            "alarm": "Alarm",
+            "electric-door": "Electric door mirrors",
+            "bluetooth": "Bluetooth connection"
+        }
+    }
+]

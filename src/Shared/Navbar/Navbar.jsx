@@ -5,7 +5,8 @@ const Navbar = () => {
 
     return (
 
-        <div className="navbar lg:w-[1200px] md-w-full mx-auto mt-5">
+        // <div className="navbar lg:w-[1200px] md-w-full mx-auto mt-5">
+        <div className="navbar lg:w-3/4 mx-auto mt-5">
             <div className="navbar-start">
                 <div className="">
                     <div className="">
