@@ -4,7 +4,6 @@ import Ratting from "../../../Shared/Ratting/Ratting";
 
 const AllRentalDetails = (cars) => {
     const { _id, c_img, c_name, c_prize, c_heading, u_img, u_name, u_ratting } = cars.cars;
-    console.log(cars?.cars);
     return (
         <div className="mt-12 bg-white">
             <div className="card card-side">

@@ -1,24 +1,22 @@
-import { useContext } from "react";
-import { useForm } from "react-hook-form";
-import { toast } from "react-hot-toast";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthProvider/AuthProvider";
-import Spinner from "../../Shared/Spinner/Spinner";
 
+import { useForm } from 'react-hook-form';
+import { toast } from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Register = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const navigate = useNavigate();
-    const location = useLocation();
 
-    const handleSignIn = (data) => {
+    const handleSignUp = data => {
         const userData = {
-            email:data.email,
-            password:data.password
+            name: data.name,
+            email: data.email,
+            password: data.password,
+            role: data.role
         }
-        fetch(`http://localhost:5000/usersLog`, {
+        fetch(`http://localhost:5000/usersReg`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -27,24 +25,28 @@ const Login = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                if (data.accessToken) {
-                    localStorage.setItem('accessToken', data.accessToken);
-                    toast.success('User Login Successfully')
-                    navigate('/')
-                    window.location.reload(true);
+                if (data.status=="Successfully") {
+                    toast.success('User Add Successfully')
+                    navigate('/login');
                 }else{
-                    toast.error(data.message);
+                    toast.error("User added previously");
                 }
             })
     }
-
     return (
         <div className='flex justify-center items-center'>
             <div className='w-96 p-7'>
-                <h2 className='text-xl text-center'>Login</h2>
-                <form onSubmit={handleSubmit(handleSignIn)}>
+                <h2 className='text-xl text-center'>Sign Up</h2>
+                <form onSubmit={handleSubmit(handleSignUp)}>
 
+
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Name</span>
+                        </label>
+                        <input type="text" {...register("name", { required: 'Name is required' })} className="input input-bordered w-full max-w-xs" />
+                        {errors.name && <p className='text-red-600'>{errors.name?.message}</p>}
+                    </div>
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
@@ -63,21 +65,27 @@ const Login = () => {
                                 // pattern:{value: /(?=.*[a-z])(?=.*[A-Z])(?=.*[$@])/, message: 'Passwor should be strong'}
                             })
                         }
-                            className="input input-bordered w-full max-w-xs" />
+                            className="input input-bordered w-full max-w-xs " />
                         {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                     </div>
+
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label"><span className="label-text">Role</span></label>
+                        <select {...register('role')} className="select input-bordered w-full max-w-xs">
+                            <option disabled selected>Please select a Option</option>
+                            <option>driver</option>
+                            <option>lift</option>
+                        </select>
+                    </div>
+
                     <button type="submit" className='btn btn-accent w-full mt-5 hover:bg-emerald-500 p-2'>
                         Submit
                     </button>
-
-                    {/* {
-                        signUpError && <p className='text-red-600'>{signUpError}</p>
-                    } */}
                 </form>
-                <p>New to Car Carry <Link className='text-red-400' to='/register'>Please Sign Up</Link></p>
+                <p>Already have an account <Link className='text-green-400' to='/login'>Please Login</Link></p>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default Register;

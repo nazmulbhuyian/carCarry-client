@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import img from '../../assets/navbar/logo-black.png'
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Navbar = () => {
+
+    const {user, loading}=useContext(AuthContext);
+
+    const handleLogOut = () =>{
+        localStorage.removeItem('accessToken');
+        loading(true);
+    }
 
     return (
 
@@ -18,8 +27,12 @@ const Navbar = () => {
                     <div className="dropdown lg:contents hidden ">
                         <Link to='/' className='mx-7 font-bold text-gray-600'>Home</Link>
                         <Link to='/allRental' className='font-bold mr-7 text-gray-600'>Rent-Car</Link>
-                        <Link to='/' className='font-bold mr-7 text-gray-600'>Profile</Link>
-                        <Link to='/login' className='font-bold text-gray-600'>Login</Link>
+                        {
+                            user?
+                            <Link onClick={handleLogOut} className='font-bold text-gray-600'>Log Out</Link>
+                            :
+                            <Link to='/login' className='font-bold text-gray-600'>Login</Link>
+                        }
                     </div>
                 </div>
                 <div className="navbar-end ">
@@ -34,7 +47,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className='lg:contents hidden'>
-                        <Link to='/dashboard' className=' font-bold text-gray-600 mr-5 ml-2'>Contact Us</Link>
+                        <Link to='/' className=' font-bold text-gray-600 mr-5 ml-2'>Profile</Link>
                     </div>
                 </div>
             </div>

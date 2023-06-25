@@ -4,6 +4,7 @@ import HomeLayout from "../pages/Home/HomeLayout";
 import Login from "../pages/Login/Login";
 import AllRental from "../pages/AllRentalDetails/AllRental/AllRental";
 import RentalDetails from "../pages/AllRentalDetails/RentalDetails/RentalDetails";
+import Register from "../pages/Login/Register";
 
 const router = createBrowserRouter([
     {
@@ -21,11 +22,15 @@ const router = createBrowserRouter([
             {
                 path: '/rentDetails/:id',
                 element: <RentalDetails></RentalDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/carsDetails/${params.id}`)
+                // loader: ({ params }) => fetch(`http://localhost:5000/carsDetails/${params.id}`)
             },
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             }
         ]
     }

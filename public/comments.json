@@ -1,7 +1,7 @@
 [
     {
         "type": "Mercedes-Benz",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Nazmul",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/KX3K2SJ/274177129-666579191161067-2519858385740403490-n.jpg",
@@ -9,7 +9,7 @@
     },
     {
         "type": "Mercedes-Benz",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Zabad",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/MBBRYq6/20220623-123009.jpg",
@@ -17,7 +17,7 @@
     },
     {
         "type": "Ford",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Jerin",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/b3C5Knv/second.jpg",
@@ -25,7 +25,7 @@
     },
     {
         "type": "Ford",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Nazma",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/P90NxWy/first.jpg",
@@ -33,7 +33,7 @@
     },
     {
         "type": "Volkswagen",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Nazmul",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/KX3K2SJ/274177129-666579191161067-2519858385740403490-n.jpg",
@@ -41,7 +41,7 @@
     },
     {
         "type": "Volkswagen",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Zabad",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/MBBRYq6/20220623-123009.jpg",
@@ -49,7 +49,7 @@
     },
     {
         "type": "BMW",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Jerin",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/b3C5Knv/second.jpg",
@@ -57,7 +57,7 @@
     },
     {
         "type": "BMW",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Nazma",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/P90NxWy/first.jpg",
@@ -65,7 +65,7 @@
     },
     {
         "type": "Audi",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Nazmul",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/KX3K2SJ/274177129-666579191161067-2519858385740403490-n.jpg",
@@ -73,7 +73,7 @@
     },
     {
         "type": "Audi",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Zabad",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/MBBRYq6/20220623-123009.jpg",
@@ -81,7 +81,7 @@
     },
     {
         "type": "Renault",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Jerin",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/b3C5Knv/second.jpg",
@@ -89,7 +89,7 @@
     },
     {
         "type": "Renault",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Nazma",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/P90NxWy/first.jpg",
@@ -97,7 +97,7 @@
     },
     {
         "type": "TOYOTA",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Nazmul",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/KX3K2SJ/274177129-666579191161067-2519858385740403490-n.jpg",
@@ -105,7 +105,7 @@
     },
     {
         "type": "TOYOTA",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Zabad",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/MBBRYq6/20220623-123009.jpg",
@@ -113,7 +113,7 @@
     },
     {
         "type": "Hyundai",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Jerin",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/b3C5Knv/second.jpg",
@@ -121,7 +121,7 @@
     },
     {
         "type": "Hyundai",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Nazma",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/P90NxWy/first.jpg",
@@ -129,7 +129,7 @@
     },
     {
         "type": "Alfa Romeo",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Nazmul",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/KX3K2SJ/274177129-666579191161067-2519858385740403490-n.jpg",
@@ -137,7 +137,7 @@
     },
     {
         "type": "Alfa Romeo",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Zabad",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/MBBRYq6/20220623-123009.jpg",
@@ -145,7 +145,7 @@
     },
     {
         "type": "Nissan",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Jerin",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/b3C5Knv/second.jpg",
@@ -153,7 +153,7 @@
     },
     {
         "type": "Nissan",
-        "e-mail": "",
+        "e_mail": "",
         "name": "Nazma",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, molestiae? Adipisci quae voluptatem ex ea debitis minima reiciendis dolorum dolores!",
         "img": "https://i.ibb.co/P90NxWy/first.jpg",
