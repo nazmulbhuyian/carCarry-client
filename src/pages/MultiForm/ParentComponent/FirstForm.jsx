@@ -1,5 +1,6 @@
-// const FirstForm = ({ formValues, onChange }) => {
-const FirstForm = ( formValues, onChange ) => {
+const FirstForm = ({ formValues, onChange }) => {
+// const FirstForm = ( formValues, onChange ) => {
+  // console.log(formValues);
     return (
       <div className="w-full max-w-sm">
         <form className="bg-white shadow-md  px-24 pt-16 pb-10 mb-8 rounded-md">

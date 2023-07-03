@@ -63,7 +63,7 @@ const RightSide = ({ detail, setBookingData, setIsOpen }) => {
 
                 <h2 className="lg:text-2xl text-xl mt-6 ml-8 lg:ml-0 md:text-center lg:text-center"><span className="text-red-500 font-bold">${c_prize}</span> Price Per Day</h2>
 
-                <a href="#booking_modal" className="btn hover:btn-primary bg-sky-500 border-0 w-full mt-6"><button onClick={handleBooking} >Rent This Car Today</button></a>
+                <a href="#booking_modal" className="btn hover:btn-primary bg-sky-500 border-0 lg:ml-40 md:ml-52 ml-8 mt-6"><button onClick={handleBooking} >Rent This Car Today</button></a>
 
                     {/* <button onClick={handleBooking} className="btn hover:btn-primary bg-sky-500 border-0 w-full mt-6">Rent This Car Today</button> */}
 

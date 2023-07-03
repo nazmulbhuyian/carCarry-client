@@ -43,7 +43,7 @@ const BookingModal = ({ bookingData, setIsOpen, refetch }) => {
                     <input type="text" className="input input-bordered w-full bg-gray-300 mt-2" value={c_email} readOnly />
                     <div className="mt-3 flex justify-between items-center">
                         <button onClick={handleBooking} className="btn bg-sky-400 hover:bg-sky-600 border-0 w-40">Submit</button>
-                        <a href="#" className="btn bg-red-400 hover:bg-red-600 border-0">Close</a>
+                        <a onClick={() => setIsOpen(false)}  className="btn bg-red-400 hover:bg-red-600 border-0">Close</a>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import Login from "../pages/Login/Login";
 import AllRental from "../pages/AllRentalDetails/AllRental/AllRental";
 import RentalDetails from "../pages/AllRentalDetails/RentalDetails/RentalDetails";
 import Register from "../pages/Login/Register";
+import DriverProfile from "../pages/Profile/DriverProfile/DriverProfile";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/driverProfile',
+                element: <DriverProfile></DriverProfile>
             }
         ]
     }

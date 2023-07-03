@@ -33,9 +33,9 @@ const AuthProvider = ({ children }) => {
     }, [])
     console.log(user, userName);
 
-    if(loading){
-        return <Spinner></Spinner>
-    }
+    // if(loading){
+    //     return <Spinner></Spinner>
+    // }
 
     const info = {
         loading,
