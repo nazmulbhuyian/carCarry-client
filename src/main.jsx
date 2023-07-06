@@ -9,6 +9,7 @@ import 'react-clock/dist/Clock.css';
 import AuthProvider from './context/AuthProvider/AuthProvider.jsx'
 
 
+
 const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')).render(

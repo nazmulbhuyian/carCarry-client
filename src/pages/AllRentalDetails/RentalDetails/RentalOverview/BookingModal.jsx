@@ -1,10 +1,11 @@
 import { toast } from "react-hot-toast";
 
 const BookingModal = ({ bookingData, setIsOpen, refetch }) => {
-    const { c_email, c_name, o_id, o_img, o_name, o_phone, date, time, prize } = bookingData;
+    const { c_email, c_name, o_id, o_img, o_name, o_email, o_phone, date, time, prize } = bookingData;
 
     const handleBooking = () => {
         const info = {
+            o_email: o_email,
             o_name: o_name,
             o_img: o_img,
             o_phone: o_phone,

@@ -14,7 +14,8 @@ const Register = () => {
             name: data.name,
             email: data.email,
             password: data.password,
-            role: data.role
+            // role: data.role
+            role: "lift"
         }
         fetch(`http://localhost:5000/usersReg`, {
             method: 'POST',
@@ -69,14 +70,14 @@ const Register = () => {
                         {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                     </div>
 
-                    <div className="form-control w-full max-w-xs">
+                    {/* <div className="form-control w-full max-w-xs">
                         <label className="label"><span className="label-text">Role</span></label>
                         <select {...register('role')} className="select input-bordered w-full max-w-xs">
                             <option disabled selected>Please select a Option</option>
                             <option>driver</option>
                             <option>lift</option>
                         </select>
-                    </div>
+                    </div> */}
 
                     <button type="submit" className='btn btn-accent w-full mt-5 hover:bg-emerald-500 p-2'>
                         Submit

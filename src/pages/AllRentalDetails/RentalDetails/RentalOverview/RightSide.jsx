@@ -8,7 +8,7 @@ import { FcCalendar, FcAlarmClock, FcManager } from "react-icons/fc";
 
 
 const RightSide = ({ detail, setBookingData, setIsOpen }) => {
-    const { u_name, c_prize, u_img, u_phone, _id } = detail;
+    const { u_name, u_email, c_prize, u_img, u_phone, _id } = detail;
     const { user, userName } = useContext(AuthContext);
 
     const [range, setRange] = useState(new Date());
@@ -31,6 +31,7 @@ const RightSide = ({ detail, setBookingData, setIsOpen }) => {
     const handleBooking = () => {
         const info = {
             o_name: u_name,
+            o_email: u_email,
             o_img: u_img,
             o_phone: u_phone,
             o_id: _id,

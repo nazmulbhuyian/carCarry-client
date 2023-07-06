@@ -8,8 +8,15 @@ import img from '../../../assets/detail_road/detail_header_road.jpg';
 import DriverDetails from "./DriverDetails/DriverDetails";
 import DriverOverview from "./DriverOverview/DriverOverview";
 import DriverBalance from "./DriverBalance/DriverBalance";
+import { useState } from "react";
+import Earnings from "./Earnings/Earnings";
+import DriverProUpdate from "./DriverProUpdate/DriverProUpdate";
+import DriverPoints from "./DriverPoints/DriverPoints";
+
 
 const DriverProfile = () => {
+
+    const [value, setValue] = useState(1);
 
     const navigation = useNavigation();
 
@@ -24,7 +31,6 @@ const DriverProfile = () => {
         }
     })
     const datas = cars?.data?.[0];
-    console.log(datas);
 
     if (navigation.state === "loading") {
         return <Spinner />
@@ -32,6 +38,7 @@ const DriverProfile = () => {
     if (isLoading) {
         return <Spinner />
     }
+
 
     return (
         <div className="mb-12">
@@ -62,6 +69,45 @@ const DriverProfile = () => {
                     <DriverBalance datas={datas}></DriverBalance>
                 </div>
             </div>
+
+            <div className="w-9/12 mx-auto mt-10 lg:flex items-start">
+
+                <ul className="mt-16">
+                    <button className="flex items-center mb-3 hover:text-red-500" onClick={() => setValue(1)}>
+                        <a className="tooltip mr-3" data-tip="Details">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </a>
+                        Earnings</button>
+                    <button onClick={() => setValue(2)} className="flex items-center mb-3 hover:text-red-500">
+                        <a className="tooltip mr-3" data-tip="Details">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </a>
+                        Profile Update</button>
+                    <button onClick={() => setValue(3)} className="flex items-center hover:text-red-500">
+                        <a className="tooltip mr-3" data-tip="Details">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </a>
+                        Points</button>
+                </ul>
+
+                <div className="lg:ml-40">
+                    {
+                        value == 1 ?
+                            <Earnings></Earnings>
+                            :
+                            <div>
+                                {
+                                    value == 2 ?
+                                        <DriverProUpdate></DriverProUpdate>
+                                        :
+                                        <DriverPoints></DriverPoints>
+                                }
+                            </div>
+                    }
+                </div>
+
+            </div>
+
         </div>
     );
 };
