@@ -6,6 +6,7 @@ import AllRental from "../pages/AllRentalDetails/AllRental/AllRental";
 import RentalDetails from "../pages/AllRentalDetails/RentalDetails/RentalDetails";
 import Register from "../pages/Login/Register";
 import DriverProfile from "../pages/Profile/DriverProfile/DriverProfile";
+import UserProfiles from "../pages/Profile/UserProfile/UserProfiles";
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
             {
                 path: '/driverProfile',
                 element: <DriverProfile></DriverProfile>
+            },
+            {
+                path: '/userProf',
+                element: <UserProfiles></UserProfiles>
             }
         ]
     }

@@ -29,7 +29,7 @@ const DriverProfile = () => {
             const data = await res.json()
             return data
         }
-    })
+    });
     const datas = cars?.data?.[0];
 
     if (navigation.state === "loading") {
@@ -100,7 +100,7 @@ const DriverProfile = () => {
                                     value == 2 ?
                                         <DriverProUpdate></DriverProUpdate>
                                         :
-                                        <DriverPoints></DriverPoints>
+                                        <DriverPoints points={datas?.points}></DriverPoints>
                                 }
                             </div>
                     }
