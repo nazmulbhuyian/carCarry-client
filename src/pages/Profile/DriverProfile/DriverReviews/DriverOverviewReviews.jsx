@@ -3,7 +3,7 @@
 const DriverOverviewReviews = () => {
     return (
         <div>
-            <h1>Revies</h1>
+            <h1>Reviews</h1>
         </div>
     );
 };

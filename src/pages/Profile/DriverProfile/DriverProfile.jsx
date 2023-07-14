@@ -12,6 +12,8 @@ import { useState } from "react";
 import Earnings from "./Earnings/Earnings";
 import DriverProUpdate from "./DriverProUpdate/DriverProUpdate";
 import DriverPoints from "./DriverPoints/DriverPoints";
+import DriverOverviewRides from "./DriverOverview/DriverRides/DriverOverviewRides";
+import DriverOverviewReviews from "./DriverReviews/DriverOverviewReviews";
 
 
 const DriverProfile = () => {
@@ -22,7 +24,7 @@ const DriverProfile = () => {
 
     const { user } = useContext(AuthContext);
 
-    const { isLoading, data: cars = [] } = useQuery({
+    const { isLoading, data: cars = [], refetch } = useQuery({
         queryKey: [`/carsDetails?email=${user}`],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/carsDetails?email=${user}`)
@@ -58,12 +60,12 @@ const DriverProfile = () => {
                 </div>
             </div>
 
-            <div className="flex w-10/12 mx-auto mt-16">
+            <div className="flex w-11/12 mx-auto mt-16">
                 <div className="w-4/12">
                     <DriverDetails datas={datas}></DriverDetails>
                 </div>
                 <div className="w-5/12">
-                    <DriverOverview></DriverOverview>
+                    <DriverOverview id={datas?._id} datas={datas} refetch={refetch}></DriverOverview>
                 </div>
                 <div className="w-3/12">
                     <DriverBalance datas={datas}></DriverBalance>
@@ -88,6 +90,11 @@ const DriverProfile = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                         </a>
                         Points</button>
+                    <button onClick={() => setValue(4)} className="flex items-center hover:text-red-500 mt-3">
+                        <a className="tooltip mr-3" data-tip="Details">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </a>
+                        Reviews</button>
                 </ul>
 
                 <div className="lg:ml-40">
@@ -100,7 +107,14 @@ const DriverProfile = () => {
                                     value == 2 ?
                                         <DriverProUpdate></DriverProUpdate>
                                         :
-                                        <DriverPoints points={datas?.points}></DriverPoints>
+                                        <div>
+                                            {
+                                                value == 3 ?
+                                                <DriverPoints points={datas?.points}></DriverPoints>
+                                                :
+                                                <DriverOverviewReviews></DriverOverviewReviews>
+                                            }
+                                        </div>
                                 }
                             </div>
                     }

@@ -7,6 +7,8 @@ import RentalDetails from "../pages/AllRentalDetails/RentalDetails/RentalDetails
 import Register from "../pages/Login/Register";
 import DriverProfile from "../pages/Profile/DriverProfile/DriverProfile";
 import UserProfiles from "../pages/Profile/UserProfile/UserProfiles";
+import DriverSelfBookingAll from "../pages/Profile/DriverProfile/DriverOverview/DriverBookings/DriverSelfBooking/DriverSelfBookingAll";
+import UserAllBookings from "../pages/Profile/UserProfile/UserOverview/UserAllBookings";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
             {
                 path: '/userProf',
                 element: <UserProfiles></UserProfiles>
+            },
+            {
+                path: '/allSelfBooking',
+                element: <DriverSelfBookingAll></DriverSelfBookingAll>
+            },
+            {
+                path: '/allUserSelfBooking',
+                element: <UserAllBookings></UserAllBookings>
             }
         ]
     }

@@ -6,6 +6,7 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [userName, setUserName] = useState(null);
+    const [userPhone, setUserPhone] = useState(null);
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -27,11 +28,12 @@ const AuthProvider = ({ children }) => {
                 }else{
                     setUser(data.email);
                     setUserName(data.userName);
+                    setUserPhone(data.userPhone);
                     setLoading(false);
                 }
             })
     }, [])
-    console.log(user, userName);
+    console.log(user, userName, userPhone);
 
     // if(loading){
     //     return <Spinner></Spinner>
@@ -40,7 +42,8 @@ const AuthProvider = ({ children }) => {
     const info = {
         loading,
         user,
-        userName
+        userName,
+        userPhone
     }
     return (
         <AuthContext.Provider value={info}>

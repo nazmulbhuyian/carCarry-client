@@ -16,7 +16,8 @@ const Register = () => {
             password: data.password,
             // role: data.role
             role: "lift",
-            balance: 0
+            balance: 0,
+            phone: data.phone
         }
         fetch(`http://localhost:5000/usersReg`, {
             method: 'POST',
@@ -27,10 +28,10 @@ const Register = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.status=="Successfully") {
+                if (data.status == "Successfully") {
                     toast.success('User Add Successfully')
                     navigate('/login');
-                }else{
+                } else {
                     toast.error("User added previously");
                 }
             })
@@ -79,6 +80,14 @@ const Register = () => {
                             <option>lift</option>
                         </select>
                     </div> */}
+
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Phone Number</span>
+                        </label>
+                        <input type="tel" {...register("phone", { required: 'phone is required' })} className="input input-bordered w-full max-w-xs" />
+                        {errors.phone && <p className='text-red-600'>{errors.phone?.message}</p>}
+                    </div>
 
                     <button type="submit" className='btn btn-accent w-full mt-5 hover:bg-emerald-500 p-2'>
                         Submit

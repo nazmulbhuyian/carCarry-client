@@ -30,6 +30,7 @@ const UserProUpdate = ({ data, refetch }) => {
                             email: data.email,
                             name: data.name,
                             img: imgData.data.url,
+                            phone: data.phone,
                             _id
                         }
                         fetch(`http://localhost:5000/usersReg`, {
@@ -56,6 +57,7 @@ const UserProUpdate = ({ data, refetch }) => {
             const userData = {
                 email: data.email,
                 name: data.name,
+                phone: data.phone,
                 _id
             }
             fetch(`http://localhost:5000/usersReg`, {
@@ -98,6 +100,14 @@ const UserProUpdate = ({ data, refetch }) => {
                         }
                             className="input input-bordered w-full max-w-xs" defaultValue={data?.name} />
                         {errors.name && <p className='text-red-600'>{errors.name?.message}</p>}
+                    </div>
+
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label"><span className="label-text">Phone Number</span></label>
+                        <input type="tel" {...register("phone", { required: 'Phone is required', })
+                        }
+                            className="input input-bordered w-full max-w-xs" defaultValue={data?.phone} />
+                        {errors.phone && <p className='text-red-600'>{errors.phone?.message}</p>}
                     </div>
 
                     {
