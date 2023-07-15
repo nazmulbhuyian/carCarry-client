@@ -28,7 +28,8 @@ const PublishRides = ({ datas, refetch }) => {
             pub_detail: datas?._id,
             date: date,
             email: datas?.u_email,
-            name: datas?.u_name
+            name: datas?.u_name,
+            phone: datas?.u_phone
         }
         fetch(`http://localhost:5000/DriPubRides`, {
             method: 'POST',

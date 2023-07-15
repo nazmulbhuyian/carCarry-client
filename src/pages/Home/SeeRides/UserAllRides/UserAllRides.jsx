@@ -14,7 +14,6 @@ const UserAllRides = () => {
         }
     });
     const datas = data?.data;
-    console.log(datas);
     if (isLoading) {
         return <Spinner />
     }
@@ -22,7 +21,7 @@ const UserAllRides = () => {
     return (
         <div className="mt-6">
             {
-                datas?.slice(0, 5).map(data=> <UserAllRide key={data?._id} data={data}></UserAllRide>)
+                datas?.slice(0, 5).map(data=> <UserAllRide key={data?._id} data={data} refetch={refetch}></UserAllRide>)
             }
         </div>
     );

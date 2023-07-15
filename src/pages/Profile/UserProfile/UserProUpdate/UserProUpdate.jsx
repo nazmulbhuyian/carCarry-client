@@ -26,8 +26,8 @@ const UserProUpdate = ({ data, refetch }) => {
                 .then(res => res.json())
                 .then(imgData => {
                     if (imgData.status === 200) {
+                        // email: data.email,
                         const userData = {
-                            email: data.email,
                             name: data.name,
                             img: imgData.data.url,
                             phone: data.phone,
@@ -54,8 +54,8 @@ const UserProUpdate = ({ data, refetch }) => {
                     }
                 })
         } else {
+            // email: data.email,
             const userData = {
-                email: data.email,
                 name: data.name,
                 phone: data.phone,
                 _id
@@ -82,17 +82,17 @@ const UserProUpdate = ({ data, refetch }) => {
     return (
         <div className='flex justify-center items-center'>
             <div className='w-96 p-7'>
-                <h2 className='text-xl text-center'>If you change E-mail You need to log-in again</h2>
+                {/* <h2 className='text-xl text-center'>If you change E-mail You need to log-in again</h2> */}
                 <form onSubmit={handleSubmit(handleSignIn)}>
 
 
-                    <div className="form-control w-full max-w-xs">
+                    {/* <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">E-mail</span>
                         </label>
                         <input type="email" {...register("email", { required: 'Email Address is required' })} className="input input-bordered w-full max-w-xs" defaultValue={data?.email} />
                         {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
-                    </div>
+                    </div> */}
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label"><span className="label-text">Name</span></label>

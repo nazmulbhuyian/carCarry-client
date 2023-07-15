@@ -28,7 +28,8 @@ const UserPublishRides = ({datas, refetch}) => {
             role: 'lift',
             date: date,
             email: datas?.email,
-            name: datas?.name
+            name: datas?.name,
+            phone: datas?.phone
         }
         fetch(`http://localhost:5000/DriPubRides`, {
             method: 'POST',
