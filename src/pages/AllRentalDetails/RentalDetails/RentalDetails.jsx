@@ -18,7 +18,7 @@ const RentalDetails = () => {
 
     const { id } = useParams();
 
-    const { isLoading, refetch, data: data = [] } = useQuery({
+    const { isLoading, refetch, data = [] } = useQuery({
         queryKey: [`/carsDetails/${id}`],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/carsDetails/${id}`)
@@ -26,7 +26,7 @@ const RentalDetails = () => {
             return data
         }
     })
-    const detail = data[0];
+    const detail = data?.data;
 
     const navigation = useNavigation();
 

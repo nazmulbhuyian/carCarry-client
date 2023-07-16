@@ -21,7 +21,7 @@ const DriverAllRides = () => {
     return (
         <div className="mt-6">
             {
-                datas?.slice(0, 5).map(data=> <DriverAllRide key={data?._id} data={data} refetch={refetch}></DriverAllRide>)
+                datas?.slice(0, 5).map(data=> <DriverAllRide key={data?._id} item={data} refetch={refetch}></DriverAllRide>)
             }
         </div>
     );

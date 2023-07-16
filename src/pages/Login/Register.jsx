@@ -16,7 +16,7 @@ const Register = () => {
             password: data.password,
             // role: data.role
             role: "lift",
-            balance: 0,
+            balance: 500,
             phone: data.phone
         }
         fetch(`http://localhost:5000/usersReg`, {

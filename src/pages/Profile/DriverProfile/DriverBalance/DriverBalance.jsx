@@ -1,6 +1,24 @@
+import { useContext } from "react";
+import {AuthContext} from '../../../../context/AuthProvider/AuthProvider';
+import { useQuery } from "@tanstack/react-query";
+import Spinner from "../../../../Shared/Spinner/Spinner";
 
+const DriverBalance = () => {
+    const { user} = useContext(AuthContext);
 
-const DriverBalance = ({datas}) => {
+    const { isLoading, data = [], refetch } = useQuery({
+        queryKey: [`/usersReg/${user}`],
+        queryFn: async () => {
+            const res = await fetch(`http://localhost:5000/usersReg/${user}`)
+            const data = await res.json()
+            return data
+        }
+    });
+    const datas = data?.data;
+    if (isLoading) {
+        return <Spinner />
+    }
+
     return (
         <div className="border border-gray-300 ml-12 p-12">
             <h1 className="text-2xl font-bold text-gray-800 text-center">Balance</h1>

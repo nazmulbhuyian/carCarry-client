@@ -66,7 +66,7 @@ const DriverProfile = () => {
                     <DriverOverview id={datas?._id} datas={datas} refetch={refetch}></DriverOverview>
                 </div>
                 <div className="lg:w-3/12">
-                    <DriverBalance datas={datas}></DriverBalance>
+                    <DriverBalance></DriverBalance>
                 </div>
             </div>
 

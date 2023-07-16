@@ -34,6 +34,7 @@ const DriverSelfBooking = () => {
                                     <th>Time</th>
                                     <th>Prize</th>
                                     <th>Details</th>
+                                    <th>Cancel</th>
                                 </tr>
                             </thead>
                             :
@@ -48,6 +49,7 @@ const DriverSelfBooking = () => {
                                     <th>{item.time}</th>
                                     <th>{item.prize} $</th>
                                     <th className="underline"><Link to={`/rentDetails/${item.o_id}`}>Details</Link></th>
+                                    <th className="underline"><button className="btn">Cancel</button></th>
                                 </tr>)
                                 :
                                 <p className="text-center p-8 text-red-500">You have no booking list.</p>

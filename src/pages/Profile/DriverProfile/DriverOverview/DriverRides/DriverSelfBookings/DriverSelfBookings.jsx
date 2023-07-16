@@ -15,7 +15,6 @@ const DriverSelfBookings = () => {
         }
     });
     const datas = data?.data;
-    console.log(datas);
     if (isLoading) {
         return <Spinner></Spinner>
     }
@@ -32,6 +31,7 @@ const DriverSelfBookings = () => {
                             <th>To</th>
                             <th>E-Mail</th>
                             <th>Phone</th>
+                            <th>Cancel</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,6 +43,7 @@ const DriverSelfBookings = () => {
                                 <th>{item.to}</th>
                                 <th>{item.pub_email}</th>
                                 <th>{item.pub_phone}</th>
+                                <th><button className="btn">Cancel</button></th>
                             </tr>)
                         }
                     </tbody>

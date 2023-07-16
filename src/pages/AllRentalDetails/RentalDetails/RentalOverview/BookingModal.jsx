@@ -1,7 +1,7 @@
 import { toast } from "react-hot-toast";
 
 const BookingModal = ({ bookingData, setIsOpen, refetch }) => {
-    const { c_email, c_name, o_id, o_img, o_name, o_email, o_phone, date, time, prize, c_phone } = bookingData;
+    const { c_email, c_name, o_id, o_img, o_name, o_email, o_phone, date, time, prize, c_phone, userBalance } = bookingData;
 
     const handleBooking = () => {
         const info = {
@@ -15,7 +15,8 @@ const BookingModal = ({ bookingData, setIsOpen, refetch }) => {
             c_name: c_name,
             c_email: c_email,
             c_phone: c_phone,
-            prize: prize
+            prize: prize,
+            userBalance: userBalance
         }
         fetch('http://localhost:5000/bookings', {
             method: 'POST',

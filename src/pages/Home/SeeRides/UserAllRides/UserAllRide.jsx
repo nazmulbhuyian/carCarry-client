@@ -1,12 +1,23 @@
 import { useState } from "react";
 import DriverAllRideModal from "../DriverAllRides/DriverAllRideModal";
+import { useContext } from "react";
+import { AuthContext } from "../../../../context/AuthProvider/AuthProvider";
+import { toast } from "react-hot-toast";
 
 
 const UserAllRide = ({ data, refetch }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const {userRole} = useContext(AuthContext);
+    const handleOpen = () =>{
+        if(userRole == 'lift'){
+            toast.error('You cant request.')
+        }else{
+            setIsOpen(true);
+        }
+    }
     return (
         <div>
-            <a href="#booking_modal3" onClick={() => setIsOpen(true)}>
+             <a href="#booking_modal3" onClick={() => handleOpen()}>
                 <button className="border border-gray-300 bg-sky-50 mb-4 rounded-lg lg:p-4 lg:px-12 flex items-center justify-between hover:shadow-xl hover:scale-105">
                     <div className="avatar">
                         <div className="w-16 rounded-full">

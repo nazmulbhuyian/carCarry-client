@@ -31,6 +31,7 @@ const DriverRequestBookings = () => {
                             <th>To</th>
                             <th>E-Mail</th>
                             <th>Phone</th>
+                            <th>Cancel</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,6 +43,7 @@ const DriverRequestBookings = () => {
                                 <th>{item.to}</th>
                                 <th>{item.b_email}</th>
                                 <th>{item.b_phone}</th>
+                                <th><button className="btn">Cancel</button></th>
                             </tr>)
                         }
                     </tbody>

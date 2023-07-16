@@ -5,11 +5,26 @@ import TimePicker from 'react-time-picker';
 import { AuthContext } from "../../../../context/AuthProvider/AuthProvider";
 import { toast } from "react-hot-toast";
 import { FcCalendar, FcAlarmClock, FcManager } from "react-icons/fc";
+import { useQuery } from "@tanstack/react-query";
+import Spinner from "../../../../Shared/Spinner/Spinner";
 
 
 const RightSide = ({ detail, setBookingData, setIsOpen }) => {
     const { u_name, u_email, c_prize, u_img, u_phone, _id } = detail;
     const { user, userName, userPhone } = useContext(AuthContext);
+
+    const { isLoading, data = [], refetch } = useQuery({
+        queryKey: [`/usersReg/${user}`],
+        queryFn: async () => {
+            const res = await fetch(`http://localhost:5000/usersReg/${user}`)
+            const data = await res.json()
+            return data
+        }
+    });
+    const datas = data?.data;
+    if (isLoading) {
+        return <Spinner />
+    }
 
     const [range, setRange] = useState(new Date());
     const [value, onChange] = useState('00:00');
@@ -40,7 +55,8 @@ const RightSide = ({ detail, setBookingData, setIsOpen }) => {
             c_name: userName,
             c_email: user,
             c_phone: userPhone,
-            prize: c_prize
+            prize: c_prize,
+            userBalance: datas?.balance
         }
         setBookingData(info);
         setIsOpen(true);

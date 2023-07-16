@@ -7,6 +7,8 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [userName, setUserName] = useState(null);
     const [userPhone, setUserPhone] = useState(null);
+    const [userBalance, setUserBalance] = useState(null);
+    const [userRole, setUserRole] = useState(null);
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -29,11 +31,13 @@ const AuthProvider = ({ children }) => {
                     setUser(data.email);
                     setUserName(data.userName);
                     setUserPhone(data.userPhone);
+                    setUserBalance(data.userBalance);
+                    setUserRole(data.userRole);
                     setLoading(false);
                 }
             })
     }, [])
-    console.log(user, userName, userPhone);
+    console.log(user, userName, userPhone, userBalance, userRole);
 
     // if(loading){
     //     return <Spinner></Spinner>
@@ -43,7 +47,9 @@ const AuthProvider = ({ children }) => {
         loading,
         user,
         userName,
-        userPhone
+        userPhone,
+        userBalance,
+        userRole
     }
     return (
         <AuthContext.Provider value={info}>
