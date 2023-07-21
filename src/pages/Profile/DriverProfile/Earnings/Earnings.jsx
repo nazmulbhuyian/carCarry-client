@@ -54,16 +54,28 @@ const Earnings = () => {
                     </thead>
                     <tbody>
                         {
-                            datas?.map((item, i) => <tr key={item._id}>
-                                <th>{i + 1}</th>
-                                <th>{item.e_date}</th>
-                                <th>0</th>
-                                <th>{item.e_rental}</th>
-                                <th>{item.e_prize}</th>
-                            </tr>)
+                            datas?.map((item, i) => {
+                                // const sum = (item?.e_ride || 0) + (item?.e_rental || 0);
+                                return (
+                                    <tr key={item._id}>
+                                        <th>{i + 1}</th>
+                                        <th>{item.e_date}</th>
+                                        <th>{item?.e_ride}</th>
+                                        <th>{item.e_rental}</th>
+                                        <th>{item.e_prize} $</th>
+                                    </tr>
+                                )
+                            }
+                            )
                         }
                     </tbody>
                 </table>
+            </div>
+
+            <div className="mt-6 flex items-center justify-evenly">
+                <h2 className="text-xl font-semibold text-red-500">Total Ride: {datas?.reduce((prev, next) => prev + parseInt(next.e_ride || 0, 10), 0)}</h2>
+                <h2 className="text-xl font-semibold text-red-500">Total Rent: {datas?.reduce((prev, next) => prev + parseInt(next.e_rental || 0, 10), 0)}</h2>
+                <h2 className="text-xl font-semibold text-red-500">Total Earn: {datas?.reduce((prev, next) => prev + parseInt(next.e_prize || 0, 10), 0)} $</h2>
             </div>
 
         </div>

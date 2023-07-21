@@ -16,7 +16,8 @@ const BookingModal = ({ bookingData, setIsOpen, refetch }) => {
             c_email: c_email,
             c_phone: c_phone,
             prize: prize,
-            userBalance: userBalance
+            userBalance: userBalance,
+            status: 'NO'
         }
         fetch('http://localhost:5000/bookings', {
             method: 'POST',

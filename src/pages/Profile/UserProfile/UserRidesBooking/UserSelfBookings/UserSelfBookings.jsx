@@ -1,12 +1,13 @@
 import { useContext } from "react";
-import {AuthContext} from '../../../../../context/AuthProvider/AuthProvider'
+import { AuthContext } from '../../../../../context/AuthProvider/AuthProvider'
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../../../../../Shared/Spinner/Spinner";
+import { toast } from "react-hot-toast";
 
 
 const UserSelfBookings = () => {
-    const {user} = useContext(AuthContext)
-    const { isLoading, data=[], refetch } = useQuery({
+    const { user } = useContext(AuthContext)
+    const { isLoading, data = [], refetch } = useQuery({
         queryKey: [`/pubRidesBooking/${user}`],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/pubRidesBooking/${user}`)
@@ -18,6 +19,45 @@ const UserSelfBookings = () => {
     if (isLoading) {
         return <Spinner></Spinner>
     }
+
+    const handleDelete = (item) => {
+        fetch(`http://localhost:5000/pubRidesBooking`, {
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(item)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data?.status == "Successfully Deleted") {
+                    toast.success('Booking Deleted successfully');
+                    refetch();
+                } else {
+                    toast.error('Something Wrong')
+                }
+            })
+    }
+
+    const handleOk = (item) => {
+        fetch(`http://localhost:5000/pubRidesBooking`, {
+            method: 'PATCH',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(item)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data?.status == "Successfully Updated") {
+                    toast.success('Booking Updated successfully');
+                    refetch();
+                } else {
+                    toast.error('Something Wrong')
+                }
+            })
+    }
+
     return (
         <div className="my-10">
 
@@ -31,7 +71,9 @@ const UserSelfBookings = () => {
                             <th>To</th>
                             <th>E-Mail</th>
                             <th>Phone</th>
+                            <th>Prize</th>
                             <th>Cancel</th>
+                            <th>Booking Ok</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,7 +85,23 @@ const UserSelfBookings = () => {
                                 <th>{item.to}</th>
                                 <th>{item.pub_email}</th>
                                 <th>{item.pub_phone}</th>
-                                <th><button className="btn">Cancel</button></th>
+                                <th>{item.prize} $</th>
+                                {
+                                    item.status == 'OK' ?
+                                        <th><p className="text-xl font-semibold">Ride Done</p></th>
+                                        :
+                                        <th>
+                                            <button onClick={() => handleDelete(item)} className="btn bg-red-500 hover:bg-red-400 rounded-lg border-0">Cancel</button>
+                                        </th>
+                                }
+                                {
+                                    item.status == 'OK' ?
+                                        <th><p className="text-xl font-semibold">Ride Done</p></th>
+                                        :
+                                        <th>
+                                            <button onClick={() => handleOk(item)} className="btn bg-sky-500 hover:bg-sky-400 rounded-lg border-0">Ride Ok ?</button>
+                                        </th>
+                                }
                             </tr>)
                         }
                     </tbody>

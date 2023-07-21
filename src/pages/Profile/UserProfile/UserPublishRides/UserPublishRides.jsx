@@ -84,7 +84,6 @@ const UserPublishRides = ({ datas, refetch }) => {
                                 <th>From</th>
                                 <th>To</th>
                                 <th>Prize</th>
-                                <th>Cancel</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -95,7 +94,6 @@ const UserPublishRides = ({ datas, refetch }) => {
                                     <th>{item.from}</th>
                                     <th>{item.to}</th>
                                     <th>{item.prize} $</th>
-                                    <th><button className="btn">Cancel</button></th>
                                 </tr>)
                             }
                         </tbody>

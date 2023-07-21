@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 
 const UseDriver = ({email}) => {
-    const [isSeller, setIsSeller] = useState(false);
-    const [isSellerLoading, setIsSellerLoading] = useState(true);
+    const [isDriver, setIsDriver] = useState(false);
+    const [isDriverLoading, setIsDriverLoading] = useState(true);
 
     useEffect(() => {
         if (email) {
@@ -11,13 +11,13 @@ const UseDriver = ({email}) => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    setIsSeller(data.isSeller);
-                    setIsSellerLoading(false)
+                    setIsDriver(data?.isDriver);
+                    setIsDriverLoading(false)
                 })
         }
     }, [email])
 
-    return [isSeller, isSellerLoading]
+    return [isDriver, isDriverLoading]
 };
 
 export default UseDriver;

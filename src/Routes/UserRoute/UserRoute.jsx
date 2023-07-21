@@ -1,24 +1,26 @@
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
-import UseDriver from "../../Hooks/UseDriver";
+import { useState } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 
-const DriverRoute = ({children}) => {
+const UserRoute = ({children}) => {
+
     const {user, loading, userRole} = useContext(AuthContext);
-    // const [isDriver, setIsDriver] = useState(false);
-    // const [isDriverLoading, setIsDriverLoading] = useState(true);
+
+    // const [isUser, setIsUser] = useState(false);
+    // const [isUserLoading, setIsUserLoading] = useState(true);
 
     // useEffect(() => {
     //     if (user) {
-    //         fetch(`http://localhost:5000/usersLog/driver/${user}`)
+    //         fetch(`http://localhost:5000/usersLog/user/${user}`)
     //             .then(res => res.json())
     //             .then(data => {
     //                 console.log(data);
-    //                 setIsDriver(data?.isDriver);
-    //                 setIsDriverLoading(false)
+    //                 setIsUser(data?.isUser);
+    //                 setIsUserLoading(false)
     //             })
     //     }
     // }, [user])
@@ -28,14 +30,14 @@ const DriverRoute = ({children}) => {
     if(loading){
         return <progress className="progress w-56 flex mx-auto lg:mt-20 lg:mb-20"></progress>
     }
-    // if(loading || isDriverLoading){
+    // if(loading || isUserLoading){
     //     return <progress className="progress w-56 flex mx-auto lg:mt-20 lg:mb-20"></progress>
     // }
 
-    if(user && userRole=='driver'){
+    if(user && userRole=='lift'){
         return children
     }
-    // if(user && isDriver==true){
+    // if(user && isUser==true){
     //     return children
     // }
 
@@ -43,4 +45,4 @@ const DriverRoute = ({children}) => {
     return <Navigate to='/login' state={{from: location}} replace></Navigate>;
 };
 
-export default DriverRoute;
+export default UserRoute;

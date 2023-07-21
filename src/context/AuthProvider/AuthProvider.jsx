@@ -13,7 +13,8 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const token = (localStorage.getItem('accessToken'));
-        fetch(`http://localhost:5000/getMe`, {
+        if(token){
+            fetch(`http://localhost:5000/getMe`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -36,6 +37,10 @@ const AuthProvider = ({ children }) => {
                     setLoading(false);
                 }
             })
+        }else{
+            setUser(null);
+            setLoading(false);
+        }
     }, [])
     console.log(user, userName, userPhone, userBalance, userRole);
 

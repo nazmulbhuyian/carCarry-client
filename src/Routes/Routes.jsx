@@ -9,6 +9,9 @@ import DriverProfile from "../pages/Profile/DriverProfile/DriverProfile";
 import UserProfiles from "../pages/Profile/UserProfile/UserProfiles";
 import DriverSelfBookingAll from "../pages/Profile/DriverProfile/DriverOverview/DriverBookings/DriverSelfBooking/DriverSelfBookingAll";
 import UserAllBookings from "../pages/Profile/UserProfile/UserOverview/UserAllBookings";
+import PrivateRoutes from "./PrivateRoute/PrivateRoutes";
+import DriverRoute from "./DriverRoute/DriverRoute";
+import UserRoute from "./UserRoute/UserRoute";
 
 const router = createBrowserRouter([
     {
@@ -37,20 +40,20 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: '/driverProfile',
-                element: <DriverProfile></DriverProfile>
+                path: '/driverProf',
+                element: <PrivateRoutes><DriverRoute><DriverProfile></DriverProfile></DriverRoute></PrivateRoutes>
             },
             {
                 path: '/userProf',
-                element: <UserProfiles></UserProfiles>
+                element: <PrivateRoutes><UserRoute><UserProfiles></UserProfiles></UserRoute></PrivateRoutes>
             },
             {
                 path: '/allSelfBooking',
-                element: <DriverSelfBookingAll></DriverSelfBookingAll>
+                element: <PrivateRoutes><DriverSelfBookingAll></DriverSelfBookingAll></PrivateRoutes>
             },
             {
                 path: '/allUserSelfBooking',
-                element: <UserAllBookings></UserAllBookings>
+                element: <PrivateRoutes><UserAllBookings></UserAllBookings></PrivateRoutes>
             }
         ]
     }

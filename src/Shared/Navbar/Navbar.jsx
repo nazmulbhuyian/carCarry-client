@@ -9,23 +9,23 @@ import { useQuery } from "@tanstack/react-query";
 
 const Navbar = () => {
 
-    const { user, loading } = useContext(AuthContext);
+    const { user, loading, userRole } = useContext(AuthContext);
 
     const handleLogOut = () => {
         localStorage.removeItem('accessToken');
         loading(true);
     }
 
-    const { isLoading, data } = useQuery({
-        queryKey: [`/usersLog/driver/${user}`],
-        queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/usersLog/driver/${user}`)
-            const data = await res.json()
-            return data
-        }
-    });
-    console.log(data);
-    if (isLoading) {
+    // const { isLoading, data } = useQuery({
+    //     queryKey: [`/usersLog/driver/${user}`],
+    //     queryFn: async () => {
+    //         const res = await fetch(`http://localhost:5000/usersLog/driver/${user}`)
+    //         const data = await res.json()
+    //         return data
+    //     }
+    // });
+    // console.log(data);
+    if (loading) {
         return <Spinner></Spinner>;
     }
 
@@ -70,8 +70,9 @@ const Navbar = () => {
                                 user ?
                                     <>
                                         {
-                                            data?.isDriver == true ?
-                                                <Link to='/driverProfile' className=' font-bold text-gray-600 mr-5 ml-2'>
+                                            // data?.isDriver == true ?
+                                            userRole == 'driver' ?
+                                                <Link to='/driverProf' className=' font-bold text-gray-600 mr-5 ml-2'>
                                                     {/* <div className="avatar">
                                                         <div className="w-24 rounded-full">
                                                             <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
@@ -80,7 +81,7 @@ const Navbar = () => {
                                                     Driver
                                                 </Link>
                                                 :
-                                                <Link to='/userPro' className=' font-bold text-gray-600 mr-5 ml-2'>
+                                                <Link to='/userProf' className=' font-bold text-gray-600 mr-5 ml-2'>
                                                     User
                                                 </Link>
                                         }
@@ -96,8 +97,9 @@ const Navbar = () => {
                             user ?
                                 <>
                                     {
-                                        data?.isDriver == true ?
-                                            <Link to='/driverProfile' className=' font-bold text-gray-600 mr-5 ml-2'>
+                                        // data?.isDriver == true ?
+                                        userRole=='driver' ?
+                                            <Link to='/driverProf' className=' font-bold text-gray-600 mr-5 ml-2'>
                                                 {/* <div className="avatar">
                                                     <div className="w-24 rounded-full">
                                                         <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />

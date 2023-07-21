@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../../context/AuthProvider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../../../../Shared/Spinner/Spinner";
+import { toast } from "react-hot-toast";
 
 const DriverAllRide = ({ item, refetch }) => {
 
@@ -24,10 +25,18 @@ const DriverAllRide = ({ item, refetch }) => {
         return <Spinner />
     }
 
+    const handleOpen = () =>{
+        if(user == item?.email){
+            toast.error('You cant booking this.');
+        }else{
+            setIsOpen(true);
+        }
+    }
+
     
     return (
         <div>
-        <a href="#booking_modal3" onClick={()=>setIsOpen(true)}>
+        <a href="#booking_modal3" onClick={()=>handleOpen()}>
             <button className="border border-gray-300 bg-sky-50 mb-4 rounded-lg lg:p-4 flex items-center justify-between lg:px-12 hover:shadow-xl hover:scale-105">
                 <div className="avatar">
                     <div className="w-16 rounded-full">

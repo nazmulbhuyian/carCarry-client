@@ -12,6 +12,7 @@ const Login = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
+    const from = location?.state?.from?.pathname || '/';
 
     const handleSignIn = (data) => {
         const userData = {
@@ -31,7 +32,8 @@ const Login = () => {
                 if (data.accessToken) {
                     localStorage.setItem('accessToken', data.accessToken);
                     toast.success('User Login Successfully')
-                    navigate('/')
+                    // navigate('/')
+                    navigate(from, {replace: true})
                     window.location.reload(true);
                 }else{
                     toast.error(data.message);

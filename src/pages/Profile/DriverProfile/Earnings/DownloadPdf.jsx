@@ -1,6 +1,6 @@
 import { Document, PDFDownloadLink, Page, StyleSheet, Text, View } from "@react-pdf/renderer";
 
-const DownloadPdf = ({datas}) => {
+const DownloadPdf = ({ datas }) => {
 
     const element = (
         <Document>
@@ -32,7 +32,7 @@ const DownloadPdf = ({datas}) => {
                                 <Text>{item.e_date}</Text>
                             </View>
                             <View style={styles.tableCell}>
-                                <Text>0</Text>
+                                <Text>{item.e_ride}</Text>
                             </View>
                             <View style={styles.tableCell}>
                                 <Text>{item.e_rental}</Text>
@@ -43,6 +43,19 @@ const DownloadPdf = ({datas}) => {
                         </View>
                     ))}
                 </View>
+
+                <View>
+                    <View style={styles.total}>
+                        <Text style={styles.totalText}>Total Ride: {datas?.reduce((prev, next) => prev + parseInt(next.e_ride || 0, 10), 0)}</Text>
+                    </View>
+                    <View style={styles.total}>
+                        <Text style={styles.totalText}>Total Rent: {datas?.reduce((prev, next) => prev + parseInt(next.e_rental || 0, 10), 0)}</Text>
+                    </View>
+                    <View style={styles.total}>
+                        <Text style={styles.totalText}>Total Earn: {datas?.reduce((prev, next) => prev + parseInt(next.e_prize || 0, 10), 0)}</Text>
+                    </View>
+                </View>
+
             </Page>
         </Document>
     );
@@ -82,7 +95,18 @@ const styles = StyleSheet.create({
         padding: 5,
         borderWidth: 1,
         borderColor: '#000000'
-    }
+    },
+    total: {
+        marginTop: "1.5rem",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-evenly"
+      },
+      totalText: {
+        fontWeight: 'semibold',
+        fontSize: "20px",
+        color: 'red'
+      }     
 });
 
-export {DownloadPdf};
+export { DownloadPdf };
