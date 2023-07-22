@@ -10,14 +10,14 @@ const NewRental = () => {
     const { isLoading, data: cars = [] } = useQuery({
         queryKey: ['/carsDetails'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/carsDetails')
+            const res = await fetch('https://car-carry-server.vercel.app/carsDetails')
             const data = await res.json()
             return data
         }
     })
 
     if (isLoading) {
-       return <Spinner></Spinner>
+        return <Spinner></Spinner>
     }
 
     return (

@@ -19,7 +19,7 @@ const UserPublishRides = ({ datas, refetch }) => {
     const { isLoading, data: publishRides = [] } = useQuery({
         queryKey: [`/DriPubRides?email=/${user}`],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/DriPubRides?email=${user}`)
+            const res = await fetch(`https://car-carry-server.vercel.app/DriPubRides?email=${user}`)
             const data = await res.json()
             return data
         }
@@ -51,7 +51,7 @@ const UserPublishRides = ({ datas, refetch }) => {
             name: datas?.name,
             phone: datas?.phone
         }
-        fetch(`http://localhost:5000/DriPubRides`, {
+        fetch(`https://car-carry-server.vercel.app/DriPubRides`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'

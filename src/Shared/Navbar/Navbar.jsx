@@ -9,7 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const Navbar = () => {
 
-    const { user, loading, userRole } = useContext(AuthContext);
+    const { user, loading, userRole, userImg } = useContext(AuthContext);
 
     const handleLogOut = () => {
         localStorage.removeItem('accessToken');
@@ -19,7 +19,7 @@ const Navbar = () => {
     // const { isLoading, data } = useQuery({
     //     queryKey: [`/usersLog/driver/${user}`],
     //     queryFn: async () => {
-    //         const res = await fetch(`http://localhost:5000/usersLog/driver/${user}`)
+    //         const res = await fetch(`https://car-carry-server.vercel.app/usersLog/driver/${user}`)
     //         const data = await res.json()
     //         return data
     //     }
@@ -60,36 +60,58 @@ const Navbar = () => {
                         <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-36">
                             <Link to='/' className='font-bold text-gray-600'>Home</Link>
                             <Link to='/allRental' className='font-bold mr-7 text-gray-600'>Rent-Car</Link>
-                        {
-                            user ?
-                                <Link onClick={handleLogOut} className='font-bold text-gray-600'>Log Out</Link>
-                                :
-                                <Link to='/login' className='font-bold text-gray-600'>Login</Link>
-                        }
+                            {
+                                user ?
+                                    <Link onClick={handleLogOut} className='font-bold text-gray-600'>Log Out</Link>
+                                    :
+                                    <Link to='/login' className='font-bold text-gray-600'>Login</Link>
+                            }
                             {
                                 user ?
                                     <>
                                         {
                                             // data?.isDriver == true ?
                                             userRole == 'driver' ?
-                                                <Link to='/driverProf' className=' font-bold text-gray-600 mr-5 ml-2'>
-                                                    {/* <div className="avatar">
-                                                        <div className="w-24 rounded-full">
-                                                            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                                                        </div>
-                                                    </div> */}
-                                                    Driver
-                                                </Link>
+                                                <div>
+                                                    {
+                                                        userImg ?
+                                                            <Link to='/driverProf' className=' font-bold text-gray-600'>
+                                                                <div className="avatar">
+                                                                    <div className="w-12 rounded-full">
+                                                                        <img src={userImg} />
+                                                                    </div>
+                                                                </div>
+                                                            </Link>
+                                                            :
+                                                            <Link to='/driverProf' className=' font-bold text-gray-600'>
+                                                                Profile
+                                                            </Link>
+                                                    }
+                                                </div>
                                                 :
-                                                <Link to='/userProf' className=' font-bold text-gray-600 mr-5 ml-2'>
-                                                    User
-                                                </Link>
+                                                <div>
+                                                    {
+                                                        userImg ?
+                                                            <Link to='/userProf' className=' font-bold text-gray-600'>
+                                                                <div className="avatar">
+                                                                    <div className="w-12 rounded-full">
+                                                                        <img src={userImg} />
+                                                                    </div>
+                                                                </div>
+                                                            </Link>
+                                                            :
+                                                            <Link to='/userProf' className=' font-bold text-gray-600'>
+                                                                Profile
+                                                            </Link>
+                                                    }
+                                                </div>
+
                                         }
                                     </>
                                     :
                                     ''
                             }
-                            <Link to='/' className='font-bold text-gray-600 mt-1'>Dashboard</Link>
+                            {/* <Link to='/' className='font-bold text-gray-600 mt-1'>Dashboard</Link> */}
                         </ul>
                     </div>
                     <div className='lg:contents hidden'>
@@ -98,25 +120,47 @@ const Navbar = () => {
                                 <>
                                     {
                                         // data?.isDriver == true ?
-                                        userRole=='driver' ?
-                                            <Link to='/driverProf' className=' font-bold text-gray-600 mr-5 ml-2'>
-                                                {/* <div className="avatar">
-                                                    <div className="w-24 rounded-full">
-                                                        <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                                                    </div>
-                                                </div> */}
-                                                Driver
-                                            </Link>
+                                        userRole == 'driver' ?
+                                            <div>
+                                                {
+                                                    userImg ?
+                                                        <Link to='/driverProf' className=' font-bold text-gray-600 mr-5 ml-2'>
+                                                            <div className="avatar">
+                                                                <div className="w-16 rounded-full">
+                                                                    <img src={userImg} />
+                                                                </div>
+                                                            </div>
+                                                        </Link>
+                                                        :
+                                                        <Link to='/driverProf' className=' font-bold text-gray-600 mr-5 ml-2'>
+                                                            Profile
+                                                        </Link>
+                                                }
+                                            </div>
                                             :
-                                            <Link to='/userProf' className=' font-bold text-gray-600 mr-5 ml-2'>
-                                                User
-                                            </Link>
+                                            <div>
+                                                {
+                                                    userImg ?
+                                                        <Link to='/userProf' className=' font-bold text-gray-600 mr-5 ml-2'>
+                                                            <div className="avatar">
+                                                                <div className="w-16 rounded-full">
+                                                                    <img src={userImg} />
+                                                                </div>
+                                                            </div>
+                                                        </Link>
+                                                        :
+                                                        <Link to='/userProf' className=' font-bold text-gray-600 mr-5 ml-2'>
+                                                            Profile
+                                                        </Link>
+                                                }
+                                            </div>
+
                                     }
                                 </>
                                 :
                                 ''
                         }
-                        <Link to='/' className='font-bold text-gray-600 ml-5'>Dashboard</Link>
+                        {/* <Link to='/' className='font-bold text-gray-600 ml-5'>Dashboard</Link> */}
                     </div>
                 </div>
             </div>

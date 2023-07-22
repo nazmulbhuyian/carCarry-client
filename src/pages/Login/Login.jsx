@@ -4,6 +4,7 @@ import { toast } from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import Spinner from "../../Shared/Spinner/Spinner";
+import SocialLogin from "./SocialLogin";
 
 
 const Login = () => {
@@ -16,10 +17,10 @@ const Login = () => {
 
     const handleSignIn = (data) => {
         const userData = {
-            email:data.email,
-            password:data.password
+            email: data.email,
+            password: data.password
         }
-        fetch(`http://localhost:5000/usersLog`, {
+        fetch(`https://car-carry-server.vercel.app/usersLog`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -33,9 +34,9 @@ const Login = () => {
                     localStorage.setItem('accessToken', data.accessToken);
                     toast.success('User Login Successfully')
                     // navigate('/')
-                    navigate(from, {replace: true})
+                    navigate(from, { replace: true })
                     window.location.reload(true);
-                }else{
+                } else {
                     toast.error(data.message);
                 }
             })
@@ -44,6 +45,14 @@ const Login = () => {
     return (
         <div className='flex justify-center items-center'>
             <div className='w-96 p-7'>
+                <div className="flex items-center justify-between text-red-500">
+                    <p>User: nafiz@gmail.com</p>
+                    <p>PassWord: 123456</p>
+                </div>
+                <div className="flex items-center justify-between text-red-500 mb-4">
+                    <p>Driver: nazmul@gmail.com</p>
+                    <p>PassWord: 123456</p>
+                </div>
                 <h2 className='text-xl text-center'>Login</h2>
                 <form onSubmit={handleSubmit(handleSignIn)}>
 
@@ -78,6 +87,7 @@ const Login = () => {
                 </form>
                 <p>New to Car Carry <Link className='text-red-400' to='/register'>Please Sign Up</Link></p>
             </div>
+            {/* <SocialLogin></SocialLogin> */}
         </div>
     );
 };

@@ -16,8 +16,8 @@ const AllRental = () => {
         // queryKey: [`/carsDetails/${currentPage}`],
         queryKey: [`/carsDetails`],
         queryFn: async () => {
-            // const res = await fetch(`http://localhost:5000/carsDetails?page=${currentPage}`)
-            const res = await fetch(`http://localhost:5000/carsDetails`)
+            // const res = await fetch(`https://car-carry-server.vercel.app/carsDetails?page=${currentPage}`)
+            const res = await fetch(`https://car-carry-server.vercel.app/carsDetails`)
             const data = await res.json()
             return data
         }
@@ -42,19 +42,19 @@ const AllRental = () => {
         <div className="bg-[#F4F8FF] mb-20">
             <div className="lg:w-3/5 md:w-4/5 w-full lg:ml-24 md:ml-16">
                 <h1 className="lg:text-4xl md:text-3xl text-2xl lg:font-bold font-semibold text-red-600 text-center">All Rental Car Is Here.</h1>
-                    <div className="mt-16">
-                        {
-                            currentRecords?.map(car => <AllRentalDetails key={car._id} cars={car}></AllRentalDetails>)
-                        }
-                    </div>
-                    <Pagination
-                        nPages={nPages}
-                        currentPage={currentPage}
-                        setCurrentPage={setCurrentPage}
-                    ></Pagination>
+                <div className="mt-16">
+                    {
+                        currentRecords?.map(car => <AllRentalDetails key={car._id} cars={car}></AllRentalDetails>)
+                    }
                 </div>
+                <Pagination
+                    nPages={nPages}
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                ></Pagination>
             </div>
-            );
+        </div>
+    );
 };
 
-            export default AllRental;
+export default AllRental;

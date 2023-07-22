@@ -12,7 +12,12 @@ const UserAllBookings = () => {
     const { isLoading, data, refetch } = useQuery({
         queryKey: [`/bookings/${user}`],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/bookings/${user}`)
+            const token = (localStorage.getItem('accessToken'));
+            const res = await fetch(`https://car-carry-server.vercel.app/bookings/${user}`, {
+                headers: {
+                    authorization: `bearer ${token}`
+                }
+            })
             const data = await res.json()
             return data
         }
@@ -23,7 +28,7 @@ const UserAllBookings = () => {
     }
 
     const handleDelete = (item) => {
-        fetch(`http://localhost:5000/bookings`, {
+        fetch(`https://car-carry-server.vercel.app/bookings`, {
             method: 'DELETE',
             headers: {
                 'Content-type': 'application/json'
@@ -42,7 +47,7 @@ const UserAllBookings = () => {
     }
 
     const handleOk = (item) => {
-        fetch(`http://localhost:5000/bookings`, {
+        fetch(`https://car-carry-server.vercel.app/bookings`, {
             method: 'PATCH',
             headers: {
                 'Content-type': 'application/json'

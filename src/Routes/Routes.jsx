@@ -12,8 +12,13 @@ import UserAllBookings from "../pages/Profile/UserProfile/UserOverview/UserAllBo
 import PrivateRoutes from "./PrivateRoute/PrivateRoutes";
 import DriverRoute from "./DriverRoute/DriverRoute";
 import UserRoute from "./UserRoute/UserRoute";
+import NotFound from "../Shared/NotFound/NotFound";
 
 const router = createBrowserRouter([
+    {
+        path: "*",
+        element: <NotFound />,
+    },
     {
         path: '/',
         element: <Main></Main>,
@@ -29,7 +34,7 @@ const router = createBrowserRouter([
             {
                 path: '/rentDetails/:id',
                 element: <RentalDetails></RentalDetails>,
-                // loader: ({ params }) => fetch(`http://localhost:5000/carsDetails/${params.id}`)
+                // loader: ({ params }) => fetch(`https://car-carry-server.vercel.app/carsDetails/${params.id}`)
             },
             {
                 path: '/login',

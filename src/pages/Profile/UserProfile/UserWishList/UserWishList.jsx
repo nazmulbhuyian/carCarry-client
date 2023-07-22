@@ -9,9 +9,9 @@ const UserWishList = () => {
     const { user } = useContext(AuthContext);
 
     const { isLoading, data } = useQuery({
-        queryKey: [`/bookings/${user}`],
+        queryKey: [`/wishList/${user}`],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/wishList/${user}`)
+            const res = await fetch(`https://car-carry-server.vercel.app/wishList/${user}`)
             const data = await res.json()
             return data
         }

@@ -10,10 +10,10 @@ const DriverAllRideModal = ({ data, setIsOpen, refetch, userBalance }) => {
 
 
     const handleBooking = (data) => {
-        // if (user == data?.email) {
-        //     toast.error('You publish this ride. So you dont booking this.');
-        //     setIsOpen(false);
-        // } else {
+        if (userBalance < data?.prize) {
+            toast.error('Dont enough money. Please deposit');
+            setIsOpen(false);
+        } else {
             const info = {
                 pub_email: data?.email,
                 pub_phone: data?.phone,
@@ -27,7 +27,7 @@ const DriverAllRideModal = ({ data, setIsOpen, refetch, userBalance }) => {
                 prize: data?.prize,
                 status: 'NO'
             }
-            fetch(`http://localhost:5000/pubRidesBooking`, {
+            fetch(`https://car-carry-server.vercel.app/pubRidesBooking`, {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'
@@ -44,7 +44,7 @@ const DriverAllRideModal = ({ data, setIsOpen, refetch, userBalance }) => {
                         toast.error('Something Wrong')
                     }
                 })
-        // }
+        }
     }
 
     return (
@@ -59,9 +59,9 @@ const DriverAllRideModal = ({ data, setIsOpen, refetch, userBalance }) => {
                     <div className="mt-2 flex justify-between items-center">
                         {
                             user ?
-                            <button onClick={() => handleBooking(data)} className="btn bg-sky-400 hover:bg-sky-600 border-0 w-40">Booking</button>
-                            :
-                            <Link to='/login' className="btn bg-sky-400 hover:bg-sky-600 border-0 w-40">Please Login For Booking</Link>
+                                <button onClick={() => handleBooking(data)} className="btn bg-sky-400 hover:bg-sky-600 border-0 w-40">Booking</button>
+                                :
+                                <Link to='/login' className="btn bg-sky-400 hover:bg-sky-600 border-0 w-40">Please Login For Booking</Link>
                         }
                         <Link to={`/rentDetails/${data?.pub_detail}`}><button className="btn bg-sky-400 hover:bg-sky-600 border-0 w-40">Details Driver</button></Link>
                         <a onClick={() => setIsOpen(false)} className="btn bg-red-400 hover:bg-red-600 border-0">Close</a>

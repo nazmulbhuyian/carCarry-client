@@ -14,7 +14,7 @@ const Earnings = () => {
     const { isLoading, refetch, data: datas = [] } = useQuery({
         queryKey: [`/earnings/${user}`],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/earnings/${user}`)
+            const res = await fetch(`https://car-carry-server.vercel.app/earnings/${user}`)
             const data = await res.json()
             return data
         }

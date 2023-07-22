@@ -25,7 +25,7 @@ const DriverProfile = () => {
     const { isLoading, data: cars = [], refetch } = useQuery({
         queryKey: [`/carsDetails?email=${user}`],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/carsDetails?email=${user}`)
+            const res = await fetch(`https://car-carry-server.vercel.app/carsDetails?email=${user}`)
             const data = await res.json()
             return data
         }

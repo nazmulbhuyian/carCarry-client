@@ -9,7 +9,7 @@ const UserProUpdate = ({ data, refetch }) => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const imageBBHostKey = '14f1e107e329b44a04c4481b2e76451e'
+    const imageBBHostKey = import.meta.env.VITE_ImageBBHostKey;
     const _id = data?._id;
 
     const handleSignIn = (data) => {
@@ -33,22 +33,26 @@ const UserProUpdate = ({ data, refetch }) => {
                             phone: data.phone,
                             _id
                         }
-                        fetch(`http://localhost:5000/usersReg`, {
-                            method: 'PATCH',
-                            headers: {
-                                'content-type': 'application/json'
-                            },
-                            body: JSON.stringify(userData)
-                        })
-                            .then(res => res.json())
-                            .then(data => {
-                                if (data?.status == "Successfully") {
-                                    toast.success('Your profile updated successfully')
-                                    refetch();
-                                } else {
-                                    toast.error('Something Wrong')
-                                }
+                        const token = (localStorage.getItem('accessToken'));
+                        if (token) {
+                            fetch(`https://car-carry-server.vercel.app/usersReg`, {
+                                method: 'PATCH',
+                                headers: {
+                                    'content-type': 'application/json',
+                                    authorization: `bearer ${token}`
+                                },
+                                body: JSON.stringify(userData)
                             })
+                                .then(res => res.json())
+                                .then(data => {
+                                    if (data?.status == "Successfully") {
+                                        toast.success('Your profile updated successfully')
+                                        refetch();
+                                    } else {
+                                        toast.error('Something Wrong')
+                                    }
+                                })
+                        }
                     } else {
                         toast.error('Please Add A Photo')
                     }
@@ -60,22 +64,26 @@ const UserProUpdate = ({ data, refetch }) => {
                 phone: data.phone,
                 _id
             }
-            fetch(`http://localhost:5000/usersReg`, {
-                method: 'PATCH',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(userData)
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data?.status == "Successfully") {
-                        toast.success('Your profile updated successfully')
-                        refetch();
-                    } else {
-                        toast.error('Something Wrong')
-                    }
+            const token = (localStorage.getItem('accessToken'));
+            if (token) {
+                fetch(`https://car-carry-server.vercel.app/usersReg`, {
+                    method: 'PATCH',
+                    headers: {
+                        'content-type': 'application/json',
+                        authorization: `bearer ${token}`
+                    },
+                    body: JSON.stringify(userData)
                 })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data?.status == "Successfully") {
+                            toast.success('Your profile updated successfully')
+                            refetch();
+                        } else {
+                            toast.error('Something Wrong')
+                        }
+                    })
+            }
         }
     }
 

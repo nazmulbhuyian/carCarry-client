@@ -6,16 +6,16 @@ import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 
-const UserRoute = ({children}) => {
+const UserRoute = ({ children }) => {
 
-    const {user, loading, userRole} = useContext(AuthContext);
+    const { user, loading, userRole } = useContext(AuthContext);
 
     // const [isUser, setIsUser] = useState(false);
     // const [isUserLoading, setIsUserLoading] = useState(true);
 
     // useEffect(() => {
     //     if (user) {
-    //         fetch(`http://localhost:5000/usersLog/user/${user}`)
+    //         fetch(`https://car-carry-server.vercel.app/usersLog/user/${user}`)
     //             .then(res => res.json())
     //             .then(data => {
     //                 console.log(data);
@@ -27,14 +27,14 @@ const UserRoute = ({children}) => {
 
     const location = useLocation()
 
-    if(loading){
+    if (loading) {
         return <progress className="progress w-56 flex mx-auto lg:mt-20 lg:mb-20"></progress>
     }
     // if(loading || isUserLoading){
     //     return <progress className="progress w-56 flex mx-auto lg:mt-20 lg:mb-20"></progress>
     // }
 
-    if(user && userRole=='lift'){
+    if (user && userRole == 'lift') {
         return children
     }
     // if(user && isUser==true){
@@ -42,7 +42,7 @@ const UserRoute = ({children}) => {
     // }
 
 
-    return <Navigate to='/login' state={{from: location}} replace></Navigate>;
+    return <Navigate to='/login' state={{ from: location }} replace></Navigate>;
 };
 
 export default UserRoute;

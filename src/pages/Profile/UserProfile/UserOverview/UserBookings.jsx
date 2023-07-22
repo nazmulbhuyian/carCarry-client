@@ -12,18 +12,24 @@ const UserBookings = () => {
     const { isLoading, data, refetch } = useQuery({
         queryKey: [`/bookings/${user}`],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/bookings/${user}`)
+            const token = (localStorage.getItem('accessToken'));
+            const res = await fetch(`https://car-carry-server.vercel.app/bookings/${user}`, {
+                headers: {
+                    authorization: `bearer ${token}`
+                }
+            })
             const data = await res.json()
             return data
         }
     });
+
     const datas = data?.data;
     if (isLoading) {
         return <Spinner></Spinner>
     }
 
     const handleDelete = (item) => {
-        fetch(`http://localhost:5000/bookings`, {
+        fetch(`https://car-carry-server.vercel.app/bookings`, {
             method: 'DELETE',
             headers: {
                 'Content-type': 'application/json'
@@ -42,7 +48,7 @@ const UserBookings = () => {
     }
 
     const handleOk = (item) => {
-        fetch(`http://localhost:5000/bookings`, {
+        fetch(`https://car-carry-server.vercel.app/bookings`, {
             method: 'PATCH',
             headers: {
                 'Content-type': 'application/json'
@@ -104,8 +110,8 @@ const UserBookings = () => {
                                                     }
                                                     {
                                                         item.status == 'OK' ?
-                                                        <th><p className="text-xl font-semibold">Ride Done</p></th>
-                                                        :
+                                                            <th><p className="text-xl font-semibold">Ride Done</p></th>
+                                                            :
                                                             <th>
                                                                 <button onClick={() => handleOk(item)} className="btn bg-sky-500 hover:bg-sky-400 rounded-lg border-0">Ride Ok ?</button>
                                                             </th>

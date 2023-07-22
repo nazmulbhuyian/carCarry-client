@@ -6,14 +6,14 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 
-const DriverRoute = ({children}) => {
-    const {user, loading, userRole} = useContext(AuthContext);
+const DriverRoute = ({ children }) => {
+    const { user, loading, userRole } = useContext(AuthContext);
     // const [isDriver, setIsDriver] = useState(false);
     // const [isDriverLoading, setIsDriverLoading] = useState(true);
 
     // useEffect(() => {
     //     if (user) {
-    //         fetch(`http://localhost:5000/usersLog/driver/${user}`)
+    //         fetch(`https://car-carry-server.vercel.app/usersLog/driver/${user}`)
     //             .then(res => res.json())
     //             .then(data => {
     //                 console.log(data);
@@ -25,14 +25,14 @@ const DriverRoute = ({children}) => {
 
     const location = useLocation()
 
-    if(loading){
+    if (loading) {
         return <progress className="progress w-56 flex mx-auto lg:mt-20 lg:mb-20"></progress>
     }
     // if(loading || isDriverLoading){
     //     return <progress className="progress w-56 flex mx-auto lg:mt-20 lg:mb-20"></progress>
     // }
 
-    if(user && userRole=='driver'){
+    if (user && userRole == 'driver') {
         return children
     }
     // if(user && isDriver==true){
@@ -40,7 +40,7 @@ const DriverRoute = ({children}) => {
     // }
 
 
-    return <Navigate to='/login' state={{from: location}} replace></Navigate>;
+    return <Navigate to='/login' state={{ from: location }} replace></Navigate>;
 };
 
 export default DriverRoute;

@@ -6,11 +6,11 @@ import { toast } from "react-hot-toast";
 
 
 const DriverSelfBookings = () => {
-    const {user} = useContext(AuthContext)
-    const { isLoading, data=[], refetch } = useQuery({
+    const { user } = useContext(AuthContext)
+    const { isLoading, data = [], refetch } = useQuery({
         queryKey: [`/pubRidesBooking/${user}`],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/pubRidesBooking/${user}`)
+            const res = await fetch(`https://car-carry-server.vercel.app/pubRidesBooking/${user}`)
             const data = await res.json()
             return data
         }
@@ -21,7 +21,7 @@ const DriverSelfBookings = () => {
     }
 
     const handleDelete = (item) => {
-        fetch(`http://localhost:5000/pubRidesBooking`, {
+        fetch(`https://car-carry-server.vercel.app/pubRidesBooking`, {
             method: 'DELETE',
             headers: {
                 'Content-type': 'application/json'
@@ -40,7 +40,7 @@ const DriverSelfBookings = () => {
     }
 
     const handleOk = (item) => {
-        fetch(`http://localhost:5000/pubRidesBooking`, {
+        fetch(`https://car-carry-server.vercel.app/pubRidesBooking`, {
             method: 'PATCH',
             headers: {
                 'Content-type': 'application/json'

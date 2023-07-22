@@ -19,7 +19,7 @@ const Register = () => {
             balance: 500,
             phone: data.phone
         }
-        fetch(`http://localhost:5000/usersReg`, {
+        fetch(`https://car-carry-server.vercel.app/usersReg`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

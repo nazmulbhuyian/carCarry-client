@@ -7,6 +7,7 @@ import { FcCalendar, FcAlarmClock, FcManager } from "react-icons/fc";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../../../../Shared/Spinner/Spinner";
 import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 
 const RightSide = ({ detail, setBookingData, setIsOpen }) => {
@@ -19,7 +20,7 @@ const RightSide = ({ detail, setBookingData, setIsOpen }) => {
     const { isLoading, data = [], refetch } = useQuery({
         queryKey: [`/usersReg/${user}`],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/usersReg/${user}`)
+            const res = await fetch(`https://car-carry-server.vercel.app/usersReg/${user}`)
             const data = await res.json()
             return data
         }
@@ -44,22 +45,26 @@ const RightSide = ({ detail, setBookingData, setIsOpen }) => {
     // }
 
     const handleBooking = () => {
-        const info = {
-            o_name: u_name,
-            o_email: u_email,
-            o_img: u_img,
-            o_phone: u_phone,
-            o_id: _id,
-            date: date,
-            time: value,
-            c_name: userName,
-            c_email: user,
-            c_phone: userPhone,
-            prize: c_prize,
-            userBalance: datas?.balance
+        if (u_email == user) {
+            toast.error("You dont booking this. Try another");
+        } else {
+            const info = {
+                o_name: u_name,
+                o_email: u_email,
+                o_img: u_img,
+                o_phone: u_phone,
+                o_id: _id,
+                date: date,
+                time: value,
+                c_name: userName,
+                c_email: user,
+                c_phone: userPhone,
+                prize: c_prize,
+                userBalance: datas?.balance
+            }
+            setBookingData(info);
+            setIsOpen(true);
         }
-        setBookingData(info);
-        setIsOpen(true);
     }
 
     return (

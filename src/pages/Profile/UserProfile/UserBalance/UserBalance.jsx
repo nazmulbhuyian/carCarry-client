@@ -6,12 +6,12 @@ import Spinner from "../../../../Shared/Spinner/Spinner";
 
 
 const UserBalance = () => {
-    const { user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
     const { isLoading, data = [], refetch } = useQuery({
         queryKey: [`/usersReg/${user}`],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/usersReg/${user}`)
+            const res = await fetch(`https://car-carry-server.vercel.app/usersReg/${user}`)
             const data = await res.json()
             return data
         }

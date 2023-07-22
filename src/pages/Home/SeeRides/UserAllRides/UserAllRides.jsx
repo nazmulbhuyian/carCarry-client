@@ -8,7 +8,7 @@ const UserAllRides = () => {
     const { isLoading, data = [], refetch } = useQuery({
         queryKey: [`/carsDetails/${'lift'}`],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/DriPubRides/${'lift'}`)
+            const res = await fetch(`https://car-carry-server.vercel.app/DriPubRides/${'lift'}`)
             const data = await res.json()
             return data
         }
@@ -21,7 +21,7 @@ const UserAllRides = () => {
     return (
         <div className="mt-6">
             {
-                datas?.slice(0, 5).map(data=> <UserAllRide key={data?._id} data={data} refetch={refetch}></UserAllRide>)
+                datas?.slice(0, 5).map(data => <UserAllRide key={data?._id} data={data} refetch={refetch}></UserAllRide>)
             }
         </div>
     );

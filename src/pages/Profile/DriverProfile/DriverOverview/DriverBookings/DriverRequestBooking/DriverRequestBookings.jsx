@@ -10,7 +10,7 @@ const DriverRequestBookings = ({ id }) => {
     const { isLoading, data, refetch } = useQuery({
         queryKey: [`/driverRequestBookings/${id}`],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/driverRequestBookings/${id}`)
+            const res = await fetch(`https://car-carry-server.vercel.app/driverRequestBookings/${id}`)
             const data = await res.json()
             return data
         }
@@ -29,7 +29,7 @@ const DriverRequestBookings = ({ id }) => {
     }
 
     const handleDelete = (item) => {
-        fetch(`http://localhost:5000/bookings`, {
+        fetch(`https://car-carry-server.vercel.app/bookings`, {
             method: 'DELETE',
             headers: {
                 'Content-type': 'application/json'
@@ -48,7 +48,7 @@ const DriverRequestBookings = ({ id }) => {
     }
 
     const handleOk = (item) => {
-        fetch(`http://localhost:5000/bookings`, {
+        fetch(`https://car-carry-server.vercel.app/bookings`, {
             method: 'PATCH',
             headers: {
                 'Content-type': 'application/json'

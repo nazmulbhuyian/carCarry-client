@@ -21,7 +21,7 @@ const RentalDetails = () => {
     const { isLoading, refetch, data = [] } = useQuery({
         queryKey: [`/carsDetails/${id}`],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/carsDetails/${id}`)
+            const res = await fetch(`https://car-carry-server.vercel.app/carsDetails/${id}`)
             const data = await res.json()
             return data
         }
@@ -65,7 +65,7 @@ const RentalDetails = () => {
             </div>
 
             {
-                isOpen&&
+                isOpen &&
                 <BookingModal bookingData={bookingData} setIsOpen={setIsOpen} refetch={refetch}></BookingModal>
             }
 

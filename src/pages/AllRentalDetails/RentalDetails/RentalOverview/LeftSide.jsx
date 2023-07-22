@@ -16,7 +16,7 @@ const LeftSide = ({ detail }) => {
     const { isLoading, refetch, data: comments = [] } = useQuery({
         queryKey: [`/comments/${c_name}`],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/comments/${c_name}`)
+            const res = await fetch(`https://car-carry-server.vercel.app/comments/${c_name}`)
             const data = await res.json()
             return data
         }
@@ -24,7 +24,7 @@ const LeftSide = ({ detail }) => {
 
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
 
-    const imageBBHostKey = "14f1e107e329b44a04c4481b2e76451e";
+    const imageBBHostKey = import.meta.env.VITE_ImageBBHostKey;
 
     const handleComment = data => {
         const image = data.img[0];
@@ -51,7 +51,7 @@ const LeftSide = ({ detail }) => {
                         comment: comment,
                         type: c_name
                     }
-                    fetch('http://localhost:5000/comments', {
+                    fetch('https://car-carry-server.vercel.app/comments', {
                         method: 'POST',
                         headers: {
                             'Content-type': 'application/json',
@@ -75,7 +75,7 @@ const LeftSide = ({ detail }) => {
     }
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/comments/${id}`, {
+        fetch(`https://car-carry-server.vercel.app/comments/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
@@ -99,7 +99,7 @@ const LeftSide = ({ detail }) => {
             detail_id: _id,
             o_phone: u_phone
         }
-        fetch('http://localhost:5000/wishList', {
+        fetch('https://car-carry-server.vercel.app/wishList', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
@@ -112,7 +112,7 @@ const LeftSide = ({ detail }) => {
                     reset()
                     toast.success(`Wishlist Added Successfully`)
                     refetch()
-                }else{
+                } else {
                     toast.error(`Wishlist Added Previously`)
                 }
             })

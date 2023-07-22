@@ -21,7 +21,7 @@ const UserProfiles = () => {
     const { isLoading, data, refetch } = useQuery({
         queryKey: [`/carsDetails?email=${user}`],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/usersReg/${user}`)
+            const res = await fetch(`https://car-carry-server.vercel.app/usersReg/${user}`)
             const data = await res.json()
             return data
         }
@@ -40,7 +40,7 @@ const UserProfiles = () => {
                 <button onClick={() => setValue(4)} className="btn bg-white hover:bg-white text-black border-0  lg:mr-3 font-semibold">Rides List</button>
                 <button onClick={() => setValue(5)} className="btn bg-white hover:bg-white text-black border-0  lg:mr-3 font-semibold">Wish List</button>
                 <button onClick={() => setValue(6)} className="btn bg-white hover:bg-white text-black border-0 lg:mr-3 font-semibold">Publish Rides</button>
-                <button onClick={() => setValue(7)} className="btn bg-white hover:bg-white text-black border-0 font-semibold">Submit Car</button>
+                {/* <button onClick={() => setValue(7)} className="btn bg-white hover:bg-white text-black border-0 font-semibold">Submit Car</button> */}
             </div>
             <hr className="mx-8" />
             {
@@ -55,30 +55,30 @@ const UserProfiles = () => {
                                 <div>
                                     {
                                         value == 3 ?
-                                        <UserBalance data={datas}></UserBalance>
-                                        :
-                                        <div>
-                                            {
-                                                value == 4 ?
-                                                <UserRidesBookings></UserRidesBookings>
-                                                :
-                                                <div>
-                                                    {
-                                                        value == 5 ?
-                                                        <UserWishList></UserWishList>
+                                            <UserBalance data={datas}></UserBalance>
+                                            :
+                                            <div>
+                                                {
+                                                    value == 4 ?
+                                                        <UserRidesBookings></UserRidesBookings>
                                                         :
                                                         <div>
                                                             {
-                                                                value == 6 ?
-                                                                <UserPublishRides datas={datas} refetch={refetch}></UserPublishRides>
-                                                                :
-                                                                <SubmitCar></SubmitCar>
+                                                                value == 5 ?
+                                                                    <UserWishList></UserWishList>
+                                                                    :
+                                                                    <div>
+                                                                        {
+                                                                            value == 6 ?
+                                                                                <UserPublishRides datas={datas} refetch={refetch}></UserPublishRides>
+                                                                                :
+                                                                                <SubmitCar></SubmitCar>
+                                                                        }
+                                                                    </div>
                                                             }
                                                         </div>
-                                                    }
-                                                </div>
-                                            }
-                                        </div>
+                                                }
+                                            </div>
                                     }
                                 </div>
                         }
